@@ -93,7 +93,7 @@ float Motorghino::get_speed_mps() {
   volatile long timediference = (measure_time - l_micros);
   volatile float distancediference = (measure_distance - l_measure_mm);
   volatile float speed_mps = (distancediference / timediference);
-  speed_mps = speed_mps * 1000.0;
+  speed_mps = speed_mps * 1000000.0;
 
   l_micros = measure_time;
   l_measure_mm = measure_distance;
