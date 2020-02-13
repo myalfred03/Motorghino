@@ -15,6 +15,7 @@ long _l_Counts;
 float l_measure_mm = 0;
 long firstcount;
 long l_micros;
+float l_speed = 0;
 
 int revolutions = 0;
 
@@ -95,7 +96,13 @@ float Motorghino::get_speed_mps() {
   volatile float speed_mps = (distancediference / timediference);
   speed_mps = speed_mps * 1000000.0;
 
+  if (abs(speed_mps - l_speed) > 500.0 ) {
+    speed_mps = l_speed;
+  }
+
+
   l_micros = measure_time;
   l_measure_mm = measure_distance;
+  l_speed = speed_mps;
   return speed_mps;
 }
