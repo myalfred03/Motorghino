@@ -12,10 +12,21 @@ uint8_t _cs_motorghino;
 uint8_t _diameter_wheel;
 uint8_t _reduction_motor;
 long _l_Counts;
+long l_counts;
+float l_rps;
 float l_measure_mm = 0;
 long firstcount;
 long l_micros;
-float l_speed = 0;
+long bitDiff = 0;
+
+float lspeed = 0.0;
+long lnow = 0;
+float l_count_speed = 0.0;
+
+
+long lbits1 = 0;
+long lbits2 = 0;
+long l_bs_fast_timer = 0;
 
 int revolutions = 0;
 
@@ -31,8 +42,6 @@ void  Motorghino::begin(uint8_t diameter_wheel, uint8_t reduction_motor, uint8_t
     _cs_motorghino = cs_motorghino;
     _diameter_wheel = diameter_wheel;
     _reduction_motor = reduction_motor;
-    Serial.begin(115200);
-
     pinMode(_cs_motorghino, OUTPUT);
     digitalWrite(_cs_motorghino, HIGH);
     SPI.begin();
@@ -46,13 +55,54 @@ void Motorghino::end(){
 
 
 
-long Motorghino::get_bits(){
+uint16_t Motorghino::get_bits(){
   volatile uint16_t motor_bits;
   digitalWrite(_cs_motorghino, LOW);
-  long l_motor_bits = SPI.transfer16(0x0000)>>2 ; //Read 16-bit angle
+  uint16_t l_motor_bits = SPI.transfer16(0x0000)>>2 ; //Read 16-bit angle
   digitalWrite(_cs_motorghino, HIGH);
   return l_motor_bits;
 }
+
+
+long Motorghino::get_bitSpeed_fast_case() {
+  volatile long bits1 = int(get_bits());
+  if (bits1 - lbits1 < 0) {
+    bitDiff = int(bits1 + 16384 - lbits1);
+  } else {
+    bitDiff = int(bits1 - lbits1);
+  }
+  lbits1 = bits1;
+  return bitDiff;
+}
+
+
+
+long Motorghino::get_bitSpeed_slow_case() {
+  volatile long bits2 = get_counts();
+  if (abs(bits2 - lbits2) < 1500) {
+    bitDiff = bits2 - lbits2;
+  }
+  lbits2 = bits2;
+  return bitDiff;
+}
+
+
+
+float Motorghino::get_speed() {
+  volatile long now = micros();
+  volatile long timediference = now - lnow;
+  volatile float count_speed;
+  if (l_count_speed <= 1000.0) {
+    count_speed = get_bitSpeed_slow_case();
+  } else {
+    count_speed = get_bitSpeed_fast_case();
+  }
+  l_count_speed = count_speed;
+  lnow = now;
+  return l_count_speed;
+}
+
+
 
 
 long Motorghino::get_revolutions() {
@@ -87,22 +137,7 @@ float Motorghino::get_mm() {
 }
 
 
-
-float Motorghino::get_speed_mps() {
-  volatile long measure_time = micros();
-  volatile float measure_distance = get_mm();
-  volatile long timediference = (measure_time - l_micros);
-  volatile float distancediference = (measure_distance - l_measure_mm);
-  volatile float speed_mps = (distancediference / timediference);
-  speed_mps = speed_mps * 1000000.0;
-
-  if (abs(speed_mps - l_speed) > 500.0 ) {
-    speed_mps = l_speed;
-  }
-
-
-  l_micros = measure_time;
-  l_measure_mm = measure_distance;
-  l_speed = speed_mps;
-  return speed_mps;
+float Motorghino::get_rps() {
+  volatile float rps_counts = get_speed()*(1000.0/16384.0);
+  return rps_counts;
 }

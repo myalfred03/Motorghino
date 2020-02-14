@@ -26,13 +26,16 @@ public:
     void end();
 
 
-
-    long get_bits();
+    float get_rps();
+    uint16_t get_bits();
+    long get_bitSpeed_fast_case();
+    long get_bitSpeed_slow_case();
+    float get_speed();
     double get_angule();
     long get_revolutions();
     long get_counts();
     float get_mm();
-    float get_speed_mps();
+
 
 private:
 };
