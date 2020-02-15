@@ -121,7 +121,7 @@ Motorghino work with a sensor of 14 bits/revolution, (16.384 counts/revolution o
   Serial.println(sp);
   ```
   
-[code]
+```C++
 
 
 #include <Motorghino.h>
@@ -152,4 +152,4 @@ mm = Motor_Left.get_mm();
 Serial.println(mm);
 
 }
-[/code]
+  ```
