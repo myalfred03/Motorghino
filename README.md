@@ -147,7 +147,7 @@ void loop() {
 // Declare variable, for example "mm" (Remember that "get_mm" function, return a float variable).
 float mm;
 
-// assign the speed (mm/s) to "sp" variable
+// assign the speed (mm) to "sp" variable
 mm = Motor_Left.get_mm();
 
 // finally, print "sp" variable through Serial Terminal
