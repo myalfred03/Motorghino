@@ -11,6 +11,9 @@
 uint8_t _cs_motorghino;
 uint8_t _diameter_wheel;
 uint8_t _reduction_motor;
+
+
+
 long _l_Counts;
 long l_counts;
 float l_rps;
@@ -88,7 +91,7 @@ long Motorghino::get_bitSpeed_slow_case() {
 
 
 
-float Motorghino::get_speed() {
+float Motorghino::get_counts_speed() {
   volatile long now = micros();
   volatile long timediference = now - lnow;
   volatile float count_speed;
@@ -138,6 +141,17 @@ float Motorghino::get_mm() {
 
 
 float Motorghino::get_rps() {
-  volatile float rps_counts = get_speed()*(1000.0/16384.0);
+  volatile float rps_counts = get_counts_speed()*(1000.0/(_reduction_motor*16384.0));
   return rps_counts;
+}
+
+
+float Motorghino::get_rpm() {
+  volatile float rpm_counts = 60*get_counts_speed()*(1000.0/(_reduction_motor*16384.0));
+  return rpm_counts;
+}
+
+float Motorghino::get_speed_mms() {
+  volatile float speed_mm = get_rps()*3.1415*_diameter_wheel;
+  return speed_mm;
 }

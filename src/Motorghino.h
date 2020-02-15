@@ -27,10 +27,12 @@ public:
 
 
     float get_rps();
+    float get_rpm();
     uint16_t get_bits();
     long get_bitSpeed_fast_case();
     long get_bitSpeed_slow_case();
-    float get_speed();
+    float get_counts_speed();
+    float get_speed_mms();
     double get_angule();
     long get_revolutions();
     long get_counts();
