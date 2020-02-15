@@ -107,3 +107,17 @@ Motorghino work with a sensor of 14 bits/revolution, (16.384 counts/revolution o
 **(long) get_mm()**: get the accumulated wheel path in mm.
 
 **(float) get_speed_mms()**: get the current speed of the wheel, in mm/s;
+
+### Example:
+
+
+```C++
+  float sp;
+
+  // assign the path (mm) to "sp" variable
+  sp = Motor_Left.get_mm();
+
+  // finally, print "sp" variable through Serial Terminal
+  Serial.println(sp);
+  ```
+  
