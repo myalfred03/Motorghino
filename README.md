@@ -53,3 +53,13 @@ Install the library directly from within the Arduino IDE by using the Library Ma
 It is also possible to import the library Zip file (check release tab) from the Arduino IDE (Sketch => Include Library => Add .ZIP Library...).
 
 The library can also be manually installed by copying the Motorghino library folder in your arduinosketchfolder/libraries/ folder. You may need to create the libraries subfolder if its your first library. Restart the IDE to see the library.
+
+# Using the library 
+
+## Step 1, import the library:
+
+Include the lamborghino library in the header of the code
+
+```C++
+#include <Motorghino.h>
+```
