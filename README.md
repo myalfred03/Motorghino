@@ -88,7 +88,17 @@ Begin the motorghino object setting the 3 parameters:
 Example:
 
 ```C++
- Motor_Left.begin(32, 5, 2); //if you have a wheel of 32mm of diameter, a 5:1 gearmotor reduction, and the chip select pin conected in D2 
+ Motor_Left.begin(32, 5, 2); //if you have a wheel of 32mm of diameter, a 5:1 gearmotor reduction, and the chip select pin connected in D2.
 ```
+## Step 4, Use the get functions:
 
+Finally, to get the values of the sensor, just use the function to get it.
 
+Motorghino work with a sensor of 14 bits/revolution, (16.384 counts/revolution of the extended motor shaft).
+
+**(uint16_t) get_bits()**: get the angle position of the wheel in bits (between 0 and 16.384);
+**(long) get_counts()**: get the accumulated wheel path in counts.
+**(float) get_rps()**: get the current angular speed of the wheel, in revolution/second;
+**(float) get_rpm()**: get the current angular speed of the wheel, in revolution/minute;
+**(long) get_mm()**: get the accumulated wheel path in mm.
+**(float) get_speed_mms()**: get the current speed of the wheel, in mm/s;
