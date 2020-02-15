@@ -29,7 +29,7 @@ Written by Andres Bercovich, CEO Lamborghino.
 | :-------: |
 | Unlike most Arduino & Genuino boards, MOTORGHINO RUNS AT 3.3V**. Even if the I/O can tolerate 5V, check that the voltage applied to VDD is at 3.3V. **Applying a voltages higher than 3.3V to the VDD pin could damage the sensor**.|
 
-### Serial communication
+### SPI communication
 MOTORGHINO have a SPI communication interface.
 
 
