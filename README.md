@@ -10,7 +10,7 @@ http://lamborghino.com
 
 
 ## License
-Written by Andres Bercovich, CEO Lamborghino and Safter Mechatronics.
+Written by Andres Bercovich, CEO Lamborghino.
 
 ## Connections
 ### Power supply
