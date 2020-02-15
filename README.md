@@ -63,3 +63,19 @@ Include the lamborghino library in the header of the code
 ```C++
 #include <Motorghino.h>
 ```
+
+## Step 2, Create the motorghino object:
+
+Create the motorghino object with the name whatever you want, for example Motor_Left 
+
+```C++
+Motorghino Motor_Left; 
+```
+
+## Step 3, Begin the motor:
+
+Create the motorghino object with the name whatever you want, for example Motor_Left 
+
+```C++
+Motorghino Motor_Left; 
+```
