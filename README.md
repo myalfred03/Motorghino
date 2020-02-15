@@ -72,10 +72,23 @@ Create the motorghino object with the name whatever you want, for example Motor_
 Motorghino Motor_Left; 
 ```
 
-## Step 3, Begin the motor:
+## Step 3, Begin and set the motor parameters:
 
-Create the motorghino object with the name whatever you want, for example Motor_Left 
+Begin the motorghino object setting the 3 parameters:
+
+**(int) Diameter of the Wheel**: That value is for calculate speed of the wheel.
+
+**(int) Gear Reduction**: Some N20 micrometal gear motors have reductions. Motorghino work detecting the angle position of the extended motor shaft, then, to get the correct rps, rpm or speed of the wheel, you must set the gear reduction.
+
+**(int) Chip Select**: Set the chip select pin (SC), of the Motorghino. Motorghino work with SPI sensor, then you must specify which pin you are use.  (If you use Open Lamborghino, the default Chip select pins are D2 and D3 for Left and Right motor respectively.
 
 ```C++
-Motorghino Motor_Left; 
+ Motor_Left.begin(uint8_t diameter_wheel, uint8_t reduction_motor, uint8_t cs_motorghino);
 ```
+Example:
+
+```C++
+ Motor_Left.begin(32, 5, 2); //if you have a wheel of 32mm of diameter, a 5:1 gearmotor reduction, and the chip select pin conected in D2 
+```
+
+
