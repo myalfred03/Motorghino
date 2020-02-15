@@ -120,7 +120,9 @@ Motorghino work with a sensor of 14 bits/revolution, (16.384 counts/revolution o
   // finally, print "sp" variable through Serial Terminal
   Serial.println(sp);
   ```
-  
+
+# Complete code example:
+
 ```C++
 
 
