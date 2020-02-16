@@ -12,6 +12,8 @@ http://lamborghino.com
 ## License
 Written by Andres Bercovich, CEO Lamborghino.
 
+![Alt text](relative/path/to/img.jpg?raw=true "Motorghino Wired 1")
+
 ## Connections
 ### Power supply
 
