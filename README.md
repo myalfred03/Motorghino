@@ -8,7 +8,6 @@ For more information of Motorghino, and Open Lamborghino proyects
 
 http://lamborghino.com
 
-![test image size](https://github.com/AndresBercovich/Motorghino/blob/master/Motorghino%20Wired%201.png){:height="50%" width="50%"}
 
 ## License
 Written by Andres Bercovich, CEO Lamborghino.
