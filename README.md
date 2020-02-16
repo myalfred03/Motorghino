@@ -42,13 +42,13 @@ Motorghino Wired work with the typical pins 2.54mm  pitch, and can be conected b
 
 | Motorghino  | Arduino | Motor Terminal |
 | ----------------------- | ---- | ---- |
-| M1          |  | Terminal  |
+| M1          |  | Terminal (Driver)  |
 | 3.3V        | 3.3V                                  |
 | GND         | GND                                   |
 | CLK         | CLK (D13)                             |
 | MISO        | MISO (D12)                            |
 | CS          | CS (Any digital pin D2, for example)  |
-| M2          |  | Terminal  |
+| M2          |  | Terminal (Driver)  |
 
 | Warning |
 | :-------: |
