@@ -8,13 +8,13 @@ For more information of Motorghino, and Open Lamborghino proyects
 
 http://lamborghino.com
 
-![Image description](https://github.com/AndresBercovich/Motorghino/blob/master/Motorghino%20Direct%201.png)
+![Motorghino Direct](https://github.com/AndresBercovich/Motorghino/blob/master/Motorghino%20Direct%201.png)
 
 
 ## License
 Written by Andres Bercovich, CEO Lamborghino.
 
-![Alt text](relative/path/to/img.jpg?raw=true "Motorghino Wired 1")
+
 
 ## Connections
 ### Power supply
