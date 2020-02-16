@@ -22,7 +22,7 @@ Motorghino Wired work with the typical pins 2.54mm  pitch, and can be conected b
 ## Motorghino Wired
 
 ![Motorghino Wired 1](https://github.com/AndresBercovich/Motorghino/blob/master/Motorghino%20Wired%201.png)
-![Motorghino Wired 2](https://github.com/AndresBercovich/Motorghino/blob/master/Motorghino%20DWired%202.png)
+![Motorghino Wired 2](https://github.com/AndresBercovich/Motorghino/blob/master/Motorghino%20Wired%202.png)
 
 ## Motorghino Direct
 ![Motorghino Direct 1](https://github.com/AndresBercovich/Motorghino/blob/master/Motorghino%20Direct%201.png)
