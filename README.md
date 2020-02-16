@@ -8,12 +8,26 @@ For more information of Motorghino, and Open Lamborghino proyects
 
 http://lamborghino.com
 
-![Motorghino Direct](https://github.com/AndresBercovich/Motorghino/blob/master/Motorghino%20Direct%201.png)
-
 
 ## License
 Written by Andres Bercovich, CEO Lamborghino.
 
+## Kinds of Motorghinos
+
+
+There are 2 types of Motorghinos. Motorghino Wired, and Motorghino Direct.
+
+Motorghino Wired work with the typical pins 2.54mm  pitch, and can be conected by simple cable conections. (Recomendable for newers robotics designers), and Motorghino Direct work with a direct connection (PCB to PCB),  easy and elegant assembling. Motorghino Direct work with OpenLamborghino 2.2 or upper. Also you can make your own pcb with motorghino using a public socket library for Autodesk Eagle.
+
+## Motorghino Wired
+![Motorghino Direct 1](https://github.com/AndresBercovich/Motorghino/blob/master/Motorghino%20Direct%201.png)
+![Motorghino Direct 2](https://github.com/AndresBercovich/Motorghino/blob/master/Motorghino%20Direct%202.png)
+
+
+## Motorghino Direct
+
+![Motorghino Wired 1](https://github.com/AndresBercovich/Motorghino/blob/master/Motorghino%20Wired%201.png)
+![Motorghino Wired 2](https://github.com/AndresBercovich/Motorghino/blob/master/Motorghino%20DWired%202.png)
 
 
 ## Connections
