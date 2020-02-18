@@ -40,6 +40,31 @@ public:
 
 
 private:
+
+  uint8_t _cs_motorghino;
+  uint8_t _diameter_wheel;
+  uint8_t _reduction_motor;
+
+
+
+  long _l_Counts;
+  long l_counts;
+  float l_rps;
+  float l_measure_mm = 0;
+  long firstcount;
+  long l_micros;
+  long bitDiff = 0;
+
+  float lspeed = 0.0;
+  long lnow = 0;
+  float l_count_speed = 0.0;
+
+
+  long lbits1 = 0;
+  long lbits2 = 0;
+  long l_bs_fast_timer = 0;
+
+  int revolutions = 0;
 };
 
 #endif //Motorghino_H
